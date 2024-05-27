@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Slideshow.png" type="image/x-icon">
+    <title>Video Slider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="slide-container active">
+            <div class="slide">
+                <div class="content">
+                    <h3>video1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio est similique, tenetur dolore velit quo magni dolorum cumque doloribus sed delectus perferendis officiis, commodi illum?</p>
+                    <a href="#" class="btn">Discover more</a>
+                </div>
+                <video src="video1.mp4" muted loop autoplay></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h3>video2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio est similique, tenetur dolore velit quo magni dolorum cumque doloribus sed delectus perferendis officiis, commodi illum?</p>
+                    <a href="#" class="btn">Discover more</a>
+                </div>
+                <video src="video2.mp4" muted loop autoplay></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h3>video3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio est similique, tenetur dolore velit quo magni dolorum cumque doloribus sed delectus perferendis officiis, commodi illum?</p>
+                    <a href="#" class="btn">Discover more</a>
+                </div>
+                <video src="video3.mp4" muted loop autoplay></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h3>video4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio est similique, tenetur dolore velit quo magni dolorum cumque doloribus sed delectus perferendis officiis, commodi illum?</p>
+                    <a href="#" class="btn">Discover more</a>
+                </div>
+                <video src="video4.mp4" muted loop autoplay></video>
+            </div>
+        </div>
+
+        <div id="next" onclick="next()"> > </div>
+        <div id="prev" onclick="prev()"> < </div>
+        
+    </div>
+
+    <script>
+        let slide = document.querySelectorAll(".slide-container");
+        let index = 0;
+
+        function next() {
+            slide [index].classList.remove('active');
+            index = (index + 1) % slide.length;
+            slide [index].classList.add('active');
+        }
+
+        function nprev() {
+            slide [index].classList.remove('active');
+            index = (index - 1 + slide.length) % slide.length;
+            slide [index].classList.add('active');
+        }
+
+    </script>
+</body>
+</html>
